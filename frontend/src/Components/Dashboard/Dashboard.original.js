@@ -39,12 +39,6 @@ function Dashboard() {
                                     {dollar} {totalBalance()}
                                 </p>
                             </div>
-                            <div className="transactions">
-                                <h2>Total Transactions</h2>
-                                <p>
-                                    {incomes.length + expenses.length}
-                                </p>
-                            </div>
                         </div>
                     </div>
                     <div className="history-con">
@@ -87,48 +81,39 @@ const DashboardStyled = styled.div`
             height: 400px;
             .amount-con{
                 display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(2, 1fr);
-                gap: 1rem;
-                margin-top: 1.2rem;
-                margin-bottom: 2rem;
-                
-                .income, .expense, .balance, .transactions{
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.2rem;
+                margin-top: 1.5rem;
+                margin-bottom: 1.5rem;
+                .income, .expense{
+                    grid-column: span 2;
+                }
+                .income, .expense, .balance{
                     background: #FCF6F9;
                     border: 2px solid #FFFFFF;
                     box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-                    border-radius: 15px;
-                    padding: 1rem 0.8rem;
-                    transition: all 0.3s ease;
+                    border-radius: 20px;
+                    padding: 1.2rem 1rem;
+                    margin-bottom: 0.5rem;
+                    p{
+                        font-size: 3.5rem;
+                        font-weight: 700;
+                    }
+                }
+
+                .balance{
+                    grid-column: 2 / 4;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    text-align: center;
-                    min-height: 100px;
-                    
-                    &:hover {
-                        transform: translateY(-2px);
-                        box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
-                    }
-                    
-                    h2 {
-                        font-size: 0.8rem;
-                        margin-bottom: 0.6rem;
-                        color: rgba(34, 34, 96, 0.7);
-                        font-weight: 600;
-                    }
-                    
-                    p{
-                        font-size: 1.8rem;
-                        font-weight: 700;
-                        margin: 0;
-                        color: rgba(34, 34, 96, 1);
-                    }
-                }
-                
-                .balance, .transactions {
+                    padding: 1.5rem 1rem;
                     margin-bottom: 1rem;
+                    p{
+                        color: var(--color-green);
+                        opacity: 0.6;
+                        font-size: 4.5rem;
+                    }
                 }
             }
         }
@@ -136,53 +121,32 @@ const DashboardStyled = styled.div`
         .history-con{
             grid-column: 4 / -1;
             padding-left: 0.5rem;
-            
             h2{
                 margin: 0.8rem 0;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
             }
-            
             .salary-title{
-                font-size: 1rem;
-                margin: 1.5rem 0 0.6rem 0;
-                color: rgba(34, 34, 96, 0.8);
-                font-weight: 600;
-                
-                &:first-of-type {
-                    margin-top: 2rem;
-                }
-                
+                font-size: 1.2rem;
+                margin: 1.2rem 0 0.8rem 0;
                 span{
-                    font-size: 1.4rem;
-                    color: rgba(34, 34, 96, 1);
-                    font-weight: 700;
+                    font-size: 1.8rem;
                 }
             }
             .salary-item{
                 background: #FCF6F9;
                 border: 2px solid #FFFFFF;
                 box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-                padding: 0.8rem 1rem;
-                border-radius: 15px;
+                padding: 1.2rem;
+                border-radius: 20px;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                margin-bottom: 0.6rem;
-                transition: all 0.3s ease;
-                min-height: 50px;
-                
-                &:hover {
-                    transform: translateY(-1px);
-                    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.08);
-                }
-                
+                margin-bottom: 0.8rem;
                 p{
                     font-weight: 600;
-                    font-size: 1.2rem;
-                    margin: 0;
-                    color: rgba(34, 34, 96, 1);
+                    font-size: 1.6rem;
                 }
             }
         }

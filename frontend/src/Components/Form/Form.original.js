@@ -99,75 +99,28 @@ function Form() {
 }
 
 const FormStyled = styled.form`
-    background: #FCF6F9;
-    border: 2px solid #FFFFFF;
-    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.08);
-    border-radius: 20px;
-    padding: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
-    transition: all 0.3s ease;
-    
-    &:hover {
-        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.12);
-    }
-    
-    .error {
-        background: #fee2e2;
-        color: #dc2626;
-        padding: 0.8rem 1rem;
-        border-radius: 10px;
-        border: 1px solid #fecaca;
-        font-size: 0.9rem;
-        font-weight: 500;
-        margin: 0;
-    }
-    
+    gap: 2rem;
     input, textarea, select{
         font-family: inherit;
-        font-size: 0.95rem;
+        font-size: inherit;
         outline: none;
         border: none;
-        padding: 0.9rem 1.2rem;
-        border-radius: 12px;
+        padding: .5rem 1rem;
+        border-radius: 5px;
         border: 2px solid #fff;
-        background: #fff;
+        background: transparent;
         resize: none;
-        box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.06);
+        box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
         color: rgba(34, 34, 96, 0.9);
-        transition: all 0.3s ease;
-        
-        &:focus {
-            border-color: var(--color-green);
-            box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
-            transform: translateY(-1px);
-        }
-        
         &::placeholder{
             color: rgba(34, 34, 96, 0.4);
-            font-size: 0.9rem;
-        }
-        
-        &:hover {
-            box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.08);
-            transform: translateY(-1px);
         }
     }
-    
     .input-control{
         input{
             width: 100%;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: rgba(34, 34, 96, 0.8);
-            font-weight: 600;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
     }
 
@@ -176,7 +129,6 @@ const FormStyled = styled.form`
         justify-content: flex-end;
         select{
             color: rgba(34, 34, 96, 0.4);
-            cursor: pointer;
             &:focus, &:active{
                 color: rgba(34, 34, 96, 1);
             }
@@ -184,20 +136,10 @@ const FormStyled = styled.form`
     }
 
     .submit-btn{
-        margin-top: 0.8rem;
         button{
-            box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.08);
-            width: 100%;
-            border-radius: 12px !important;
-            padding: 1rem 2rem !important;
-            font-weight: 600 !important;
-            font-size: 0.95rem !important;
-            transition: all 0.3s ease !important;
-            
+            box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
             &:hover{
                 background: var(--color-green) !important;
-                transform: translateY(-2px);
-                box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.15);
             }
         }
     }

@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 110px 20px 40px 20px; /* Added top padding for fixed navbar */
   overflow: hidden;
   position: relative;
 }
@@ -147,7 +147,7 @@
 @media (max-width: 768px) {
   .hero {
     min-height: auto;
-    padding: 60px 20px;
+    padding: 130px 20px 60px 20px; /* Adjusted for mobile navbar */
   }
 
   .hero-content {

@@ -19,53 +19,53 @@ function IncomeItem({
     const categoryIcon = () =>{
         switch(category) {
             case 'salary':
-                return '💰';
+                return money;
             case 'freelancing':
-                return '💼';
+                return freelance
             case 'investments':
-                return '📈';
+                return stocks;
             case 'stocks':
-                return '📊';
+                return users;
             case 'bitcoin':
-                return '₿';
+                return bitcoin;
             case 'bank':
-                return '🏦';
+                return card;
             case 'youtube':
-                return '📺';
+                return yt;
             case 'other':
-                return '💵';
+                return piggy;
             default:
-                return '💰'
+                return ''
         }
     }
 
     const expenseCatIcon = () => {
         switch (category) {
             case 'education':
-                return '📚';
+                return book;
             case 'groceries':
-                return '🛒';
+                return food;
             case 'health':
-                return '🏥';
+                return medical;
             case 'subscriptions':
-                return '📱';
+                return tv;
             case 'takeaways':
-                return '🍕';
+                return takeaway;
             case 'clothing':
-                return '👕';
+                return clothing;
             case 'travelling':
-                return '✈️';
+                return freelance;
             case 'other':
-                return '💸';
+                return circle;
             default:
-                return '💸'
+                return ''
         }
     }
 
     console.log('type', type)
 
     return (
-        <IncomeItemStyled indicator={indicatorColor} type={type}>
+        <IncomeItemStyled indicator={indicatorColor}>
             <div className="icon">
                 {type === 'expense' ? expenseCatIcon() : categoryIcon()}
             </div>
@@ -83,7 +83,7 @@ function IncomeItem({
                     <div className="btn-con">
                         <Button 
                             icon={trash}
-                            bPad={'0.6rem'}
+                            bPad={'1rem'}
                             bRad={'50%'}
                             bg={'var(--primary-color'}
                             color={'#fff'}
@@ -101,42 +101,26 @@ function IncomeItem({
 const IncomeItemStyled = styled.div`
     background: #FCF6F9;
     border: 2px solid #FFFFFF;
-    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.08);
-    border-radius: 15px;
-    padding: 1rem 1.2rem;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
+    border-radius: 20px;
+    padding: 1rem;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
     gap: 1rem;
     width: 100%;
     color: #222260;
-    transition: all 0.3s ease;
-    min-height: 80px;
-    
-    &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.12);
-        border-color: var(--color-green);
-    }
-    
     .icon{
-        width: 50px;
-        height: 50px;
-        border-radius: 12px;
-        background: ${props => props.type === 'expense' 
-            ? 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)' 
-            : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'};
+        width: 80px;
+        height: 80px;
+        border-radius: 20px;
+        background: #F5F5F5;
         display: flex;
         align-items: center;
         justify-content: center;
         border: 2px solid #FFFFFF;
-        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-        flex-shrink: 0;
-        font-size: 1.5rem;
-        
         i{
-            font-size: 1.5rem;
-            color: #fff;
+            font-size: 2.6rem;
         }
     }
 
@@ -144,28 +128,19 @@ const IncomeItemStyled = styled.div`
         flex: 1;
         display: flex;
         flex-direction: column;
-        gap: .4rem;
-        min-width: 0;
-        
+        gap: .2rem;
         h5{
-            font-size: 1rem;
-            font-weight: 600;
-            padding-left: 1.2rem;
+            font-size: 1.3rem;
+            padding-left: 2rem;
             position: relative;
-            margin: 0;
-            color: rgba(34, 34, 96, 1);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            
             &::before{
                 content: '';
                 position: absolute;
                 left: 0;
                 top: 50%;
                 transform: translateY(-50%);
-                width: .6rem;
-                height: .6rem;
+                width: .8rem;
+                height: .8rem;
                 border-radius: 50%;
                 background: ${props => props.indicator};
             }
@@ -175,59 +150,16 @@ const IncomeItemStyled = styled.div`
             display: flex;
             justify-content: space-between;
             align-items: center;
-            
             .text{
                 display: flex;
                 align-items: center;
-                gap: 1rem;
-                flex-wrap: wrap;
-                min-width: 0;
-                
+                gap: 1.5rem;
                 p{
                     display: flex;
                     align-items: center;
-                    gap: 0.3rem;
-                    color: rgba(34, 34, 96, 0.8);
-                    font-size: 0.8rem;
-                    margin: 0;
-                    white-space: nowrap;
-                    
-                    &:first-child {
-                        font-weight: 700;
-                        font-size: 0.95rem;
-                        color: rgba(34, 34, 96, 1);
-                    }
-                    
-                    &:last-child {
-                        max-width: 120px;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                    }
-                    
-                    i {
-                        color: rgba(34, 34, 96, 0.6);
-                        font-size: 0.7rem;
-                        flex-shrink: 0;
-                    }
-                }
-            }
-            
-            .btn-con {
-                flex-shrink: 0;
-                
-                button {
-                    transition: all 0.3s ease;
-                    padding: 0.6rem !important;
-                    
-                    &:hover {
-                        transform: scale(1.1);
-                        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-                    }
-                    
-                    i {
-                        font-size: 0.9rem !important;
-                    }
+                    gap: 0.5rem;
+                    color: var(--primary-color);
+                    opacity: 0.8;
                 }
             }
         }

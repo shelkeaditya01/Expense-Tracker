@@ -41,7 +41,7 @@ const Features = () => {
   ]
 
   return (
-    <section className="features">
+    <section id="features" className="features">
       <div className="features-container">
         <h2 className="features-title">Why Choose Our Expense Tracker?</h2>
         <p className="features-subtitle">Powerful features designed to help you manage your finances better</p>

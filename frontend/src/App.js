@@ -91,6 +91,7 @@ import Dashboard from "./Components/Dashboard/Dashboard";
 import Expenses from "./Components/Expenses/Expenses";
 import Income from "./Components/Income/Income";
 import LandingPage from "./Components/LandingPage/LandingPage";
+import DashboardNavbar from "./Components/Navbar/DashboardNavbar";
 import { useGlobalContext } from "./context/globalContext";
 
 function App() {
@@ -119,6 +120,11 @@ function App() {
     setShowDashboard(true);
   }
 
+  const handleLogout = () => {
+    setShowDashboard(false);
+    setActive(1);
+  }
+
   const orbMemo = useMemo(() => {
     return <Orb></Orb>
   }, [])
@@ -134,6 +140,7 @@ function App() {
   
   return (
     <div className="App">
+      <DashboardNavbar onLogout={handleLogout} />
       <AppStyled bg={bg} className="App">
         {orbMemo}
         <MainLayout>
@@ -158,6 +165,7 @@ const AppStyled = styled.div`
   height: 100vh;
   background-image: url(${props=>props.bg});
   position: relative;
+  padding-top: 70px; /* Add padding for fixed navbar */
   
   main{
     flex: 1;

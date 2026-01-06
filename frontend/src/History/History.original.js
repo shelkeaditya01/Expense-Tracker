@@ -37,48 +37,16 @@ function History() {
 const HistoryStyled = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
-    
-    h2 {
-        margin-bottom: 0.8rem;
-        font-size: 1.1rem;
-        color: rgba(34, 34, 96, 1);
-    }
-    
+    gap: 0.8rem;
     .history-item{
         background: #FCF6F9;
         border: 2px solid #FFFFFF;
         box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-        padding: 0.8rem 1rem;
-        border-radius: 15px;
+        padding: 1.2rem;
+        border-radius: 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        transition: all 0.3s ease;
-        min-height: 50px;
-        
-        &:hover {
-            transform: translateY(-1px);
-            box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.08);
-        }
-        
-        p {
-            margin: 0;
-            font-size: 0.85rem;
-            font-weight: 500;
-            
-            &:first-child {
-                max-width: 120px;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            }
-            
-            &:last-child {
-                font-weight: 600;
-                font-size: 0.9rem;
-            }
-        }
     }
 `;
 

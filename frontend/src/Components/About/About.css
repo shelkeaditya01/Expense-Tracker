@@ -1,0 +1,193 @@
+.about {
+  padding: 100px 20px;
+  background: #f8f9fa;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about-title {
+  font-size: 44px;
+  font-weight: 800;
+  color: #000;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.about-subtitle {
+  font-size: 20px;
+  color: #555;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.about-description {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-description p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 20px;
+}
+
+.stat {
+  text-align: center;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-4px);
+}
+
+.stat h3 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #000;
+  margin: 0 0 8px 0;
+}
+
+.stat p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  font-weight: 500;
+}
+
+.about-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 2px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.about-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 24px 0;
+  text-align: center;
+}
+
+.about-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-card li {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 12px;
+  padding-left: 8px;
+  line-height: 1.5;
+}
+
+.about-card li:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about {
+    padding: 80px 20px;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .about-title {
+    font-size: 32px;
+  }
+
+  .about-subtitle {
+    font-size: 18px;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-card {
+    padding: 30px 24px;
+  }
+
+  .about-card h3 {
+    font-size: 20px;
+  }
+
+  .about-card li {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 60px 16px;
+  }
+
+  .about-title {
+    font-size: 28px;
+  }
+
+  .about-subtitle {
+    font-size: 16px;
+  }
+
+  .about-description p {
+    font-size: 14px;
+  }
+
+  .stat h3 {
+    font-size: 24px;
+  }
+
+  .stat p {
+    font-size: 12px;
+  }
+}

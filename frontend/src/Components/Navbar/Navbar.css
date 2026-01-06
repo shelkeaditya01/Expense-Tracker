@@ -1,0 +1,267 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+  transform: translateY(0);
+}
+
+.navbar.hidden {
+  transform: translateY(-100%);
+}
+
+.navbar.visible {
+  transform: translateY(0);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo and Brand */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-name {
+  font-size: 22px;
+  font-weight: 800;
+  color: #000;
+  letter-spacing: 0.5px;
+}
+
+/* Navigation Links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-link {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+.nav-link:hover {
+  color: #555;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* CTA Buttons */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-login {
+  background: transparent;
+  color: #000;
+  border: 2px solid transparent;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+  background: #f5f5f5;
+}
+
+.btn-signup {
+  background: #000;
+  color: #fff;
+  border: 2px solid #000;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-signup:hover {
+  background: #1a1a1a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.mobile-menu-btn span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #000;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.mobile-nav-link {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+.mobile-nav-link:hover {
+  color: #555;
+}
+
+.mobile-menu-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-login.mobile,
+.btn-signup.mobile {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-links,
+  .navbar-actions {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .navbar-container {
+    padding: 0 16px;
+  }
+
+  .brand-name {
+    font-size: 18px;
+  }
+}
+
+/* Animation for navbar appearance */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.navbar {
+  animation: slideDown 0.5s ease-out;
+}
